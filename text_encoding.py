@@ -40,9 +40,6 @@ class ReshapeText(nn.Module):
     def forward(self, x):
       x = self.tokenizer(x, padding = 'max_length', truncation = True, max_length = 256)['input_ids']
       x = torch.tensor(x).float()
-      # x = self.resize(x)
-      # N = x.shape[0]
-      # x = x.reshape(N, self.img_size, self.img_size)
       return x
 
 
